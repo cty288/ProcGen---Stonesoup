@@ -82,7 +82,7 @@ public class apt283Gun : Tile {
 
 		newBullet.GetComponent<Tile>().init();
 		newBullet.GetComponent<Tile>().addForce(tileUsingUs.aimDirection.normalized*shootForce);
-
+		
 		_cooldownTimer = cooldownTime;
 	}
 

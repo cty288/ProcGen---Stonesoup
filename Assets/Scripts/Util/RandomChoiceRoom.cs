@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,8 +10,13 @@ public class RandomChoiceRoom : Room {
 
 	public GameObject[] roomChoices;
 
-	public override Room createRoom(ExitConstraint requiredExits) {
-		GameObject roomPrefab = GlobalFuncs.randElem(roomChoices);
+    private void Start() {
+       
+    }
+
+    public override Room createRoom(ExitConstraint requiredExits) {
+        GameObject roomPrefab = GlobalFuncs.randElem(roomChoices);
+        
 		return roomPrefab.GetComponent<Room>().createRoom(requiredExits);
 	}
 }

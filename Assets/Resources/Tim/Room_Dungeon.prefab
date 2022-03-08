@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8918495473547364284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5688032753828096033}
+  - component: {fileID: -4087025842672884732}
+  m_Layer: 0
+  m_Name: Room_Dungeon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5688032753828096033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8918495473547364284}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4087025842672884732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8918495473547364284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c55e712d43f8d4ea486e1f2c374c95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomAuthor: Tim (Dungeon Room)
+  designedRoomFile: {fileID: 0}
+  localTilePrefabs: []
+  roomGridX: 0
+  roomGridY: 0
+  portalPrefab: {fileID: 5653168957430741782, guid: 3111f8ef65084c9458cd75c70bdce08a,
+    type: 3}
+  buttonPrefab: {fileID: 2910250241211345500, guid: 8828cafbb44fa9840a183ad3cd2db689,
+    type: 3}
+  dungeonRandomness: 17
+  dungeonSpawnRandomness: 35
+  maxFill: 45
+  ghostPrefab: {fileID: 8817502390254545684, guid: dff920d8801ac884e89e9a37bf6a136c,
+    type: 3}
+  portalGunPrefab: {fileID: 1709880916603501921, guid: 72b08948c3100784eb521fc56555af23,
+    type: 3}
+  currentFilled: 0
+  exitLocations: []

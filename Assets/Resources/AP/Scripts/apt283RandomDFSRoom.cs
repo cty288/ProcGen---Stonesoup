@@ -41,7 +41,7 @@ public class apt283RandomDFSRoom : Room {
 
         bool foundStartPos = false;
         Vector2 startPos = new Vector2(Random.Range(0, LevelGenerator.ROOM_WIDTH), Random.Range(0, LevelGenerator.ROOM_HEIGHT));
-
+		
         foreach (Vector2Int exitLocation in requiredExits.requiredExitLocations()) {
 			wallMap[exitLocation.x, exitLocation.y] = false;
             if (!foundStartPos) {
