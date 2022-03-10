@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1965585352857381325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7610746475465904784}
+  - component: {fileID: 6581199938673297343}
+  m_Layer: 0
+  m_Name: Room
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7610746475465904784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965585352857381325}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6581199938673297343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965585352857381325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bda49e592a4044b6a806929d15d59301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomAuthor: Wen
+  designedRoomFile: {fileID: 0}
+  localTilePrefabs: []
+  roomGridX: 0
+  roomGridY: 0
+  RoomChoices:
+  - {fileID: -6677758836104665303, guid: a3cf42f742c80471f956b1c45ca5ce93, type: 3}
+  - {fileID: -1609175851526269524, guid: f4683f4e8cf2d47be92ffd323b7d9f4f, type: 3}
+  - {fileID: -8263213591346251051, guid: e7b7177f566524fbeb721c5a2a1f408c, type: 3}
+  - {fileID: 151406445883618388, guid: 6b6c8a457d86146b8ab8ab56235dc791, type: 3}
+  - {fileID: 7745814308208010802, guid: 09705b4a520f548ff97c9bf933f8b962, type: 3}
+  - {fileID: 2791269283560553723, guid: 393190ef0194b47c0bbc0999e2418436, type: 3}
+  - {fileID: 5414153916966867940, guid: ef45a1b6c78e0412e8404dc1e9657039, type: 3}
+  - {fileID: 2976420725511623579, guid: ace03bba1149643aaae8e48c248498e5, type: 3}
