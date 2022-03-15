@@ -59,6 +59,8 @@ MonoBehaviour:
     type: 3}
   portalGunPrefab: {fileID: 1709880916603501921, guid: 72b08948c3100784eb521fc56555af23,
     type: 3}
+  enemySpawnerPrefab: {fileID: 9202334250702815983, guid: 9e1b03ebc1095ed4e8ae2b517b5eadf9,
+    type: 3}
   currentFilled: 0
   exitLocations: []
   enemyPrefabs:

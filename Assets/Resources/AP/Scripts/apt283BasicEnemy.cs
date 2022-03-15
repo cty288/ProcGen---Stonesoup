@@ -31,7 +31,7 @@ public class apt283BasicEnemy : BasicAICreature{
 			GameObject maybeWeaponPrefab = GlobalFuncs.randElem(maybeWeaponsToStartWith);
 			if (maybeWeaponPrefab != null) {
 				Vector2 ourGridPos = toGridCoord(localX, localY);
-				Tile.spawnTile(maybeWeaponPrefab, transform.parent, (int)ourGridPos.x, (int)ourGridPos.y);
+				this.SpawnTile(maybeWeaponPrefab, transform.parent, (int)ourGridPos.x, (int)ourGridPos.y);
 			}
 		}
 	}

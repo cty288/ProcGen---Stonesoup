@@ -21,6 +21,8 @@ public class TimDungeonRoom : Room {
 
     [SerializeField] private GameObject ghostPrefab;
     [SerializeField] private GameObject portalGunPrefab;
+    [SerializeField] protected GameObject enemySpawnerPrefab;
+
 
     protected TimRoomManager roomManager;
 
@@ -57,7 +59,11 @@ public class TimDungeonRoom : Room {
                 roomGrids[x, y] = 1;
             }
         }
-
+        Debug.Log(roomCenter.ToString() +"    \n" +
+                  $"down: {requiredExits.downExitRequired} \n" +
+                  $"right: {requiredExits.rightExitRequired}\n" +
+                  $"left: {requiredExits.leftExitRequired}\n" +
+                  $"up: {requiredExits.upExitRequired}\n");
 
 
         ExitConstraint additionalExits = roomManager.GetAdditionalExits(new Vector2Int(roomGridX, roomGridY));
@@ -116,10 +122,7 @@ public class TimDungeonRoom : Room {
 
         List<Vector2Int> criticalPath = new List<Vector2Int>();
         for (int i = 0; i < exitLocations.Count - 1; i++) {
-            if (currentFilled <= maxFill) {
-                //generate critical path first
-                criticalPath = GeneratePath(exitLocations[i], exitLocations[i + 1],PathType.Critical, 2);
-            }
+            criticalPath = GeneratePath(exitLocations[i], exitLocations[i + 1], PathType.Critical, 8);
         }
 
         //generate dungeons
@@ -139,8 +142,11 @@ public class TimDungeonRoom : Room {
                             Random.Range(0, LevelGenerator.ROOM_HEIGHT / 2));
                     }
 
+                    if(currentFilled <= maxFill) {
+                        //generate critical path first
+                        GeneratePath(startPos, exitPos, PathType.Normal, (int)DungeonRandomness);
+                    }
                    
-                    GeneratePath(startPos, exitPos, PathType.Normal, (int) DungeonRandomness);
                 }
             }
         }
@@ -157,11 +163,22 @@ public class TimDungeonRoom : Room {
 
             }
         }
-
+        SpawnEnemySpawner();
         SpawnPortals();
         SpawnButton();
         SpawnGhost();
         SpawnGun();
+      
+    }
+
+    private void SpawnEnemySpawner() {
+        List<Vector2Int> openAreas = GetOpenAreas(2);
+        if (openAreas.Count > 0 && Random.Range(0, 100) <= 30)
+        {
+            Vector2Int openArea = GlobalFuncs.randElem(openAreas);
+            Tile.spawnTile(enemySpawnerPrefab, transform, openArea.x, openArea.y);
+            roomGrids[openArea.x, openArea.y] = 3;
+        }
     }
 
     private void SpawnGun() {
@@ -259,7 +276,7 @@ public class TimDungeonRoom : Room {
         }
 
         if (suitablePortalLocationPairs.Count >= 1) {
-            if (Random.Range(0, 10) >= 0)
+            if (Random.Range(0, 10) >= 5)
             {
                 Vector2Int[] portalSpawnLocations =
                     suitablePortalLocationPairs[Random.Range(0, suitablePortalLocationPairs.Count)]; 

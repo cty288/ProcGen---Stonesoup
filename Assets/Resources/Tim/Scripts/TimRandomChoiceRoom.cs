@@ -6,27 +6,47 @@ using UnityEngine;
 public class TimRandomChoiceRoom : Room
 {
     public GameObject[] roomChoices;
-    
+    protected TimRoomManager roomManager;
+    [SerializeField] private GameObject enemySpawnerPrefab;
     public override Room createRoom(ExitConstraint requiredExits)
     {
         if (!GameObject.Find("_GameManager").GetComponent<TimRoomManager>())
         {
             GameObject.Find("_GameManager").AddComponent<TimRoomManager>();
         }
-
+        roomManager = GameObject.Find("_GameManager").GetComponent<TimRoomManager>();
 
         GameObject roomPrefab = GlobalFuncs.randElem(roomChoices);
 
-        if (requiredExits.requiredExitLocations().Count() > 0) {
-            roomPrefab = roomChoices[0]; //dungeon
+//        IEnumerable additionalConstraint =
+
+        if (requiredExits.requiredExitLocations().Any()) {
+
+            int exitCount = requiredExits.requiredExitLocations().Count();
+
+
+            if (exitCount == 1) {
+                //Debug.Log("RandomChoiceRoom: "+ new Vector2Int(roomGridX, roomGridY));
+                int spawnChance = Random.Range(0, 100);
+                if (spawnChance >= 50) {
+                    roomPrefab = roomChoices[4]; //tunnel
+                }
+                else {
+                    roomPrefab = roomChoices[0]; //dungeon
+                }
+            }
+            else {
+                roomPrefab = roomChoices[0]; //dungeon
+            }
+           
         }
         else {
             int spawnChance = Random.Range(0, 100);
-            if (spawnChance <= 20) {
-                roomPrefab = roomChoices[1];
-            }else if(spawnChance>20 && spawnChance<=50) {
+            if (spawnChance <= 20) { 
+                roomPrefab = roomChoices[1]; //treasure
+            }else if(spawnChance>20 && spawnChance<=40) { //big dungeon
                 roomPrefab = roomChoices[2];
-            }else if (spawnChance>50 && spawnChance<=80) {
+            }else if (spawnChance>40 && spawnChance<=60) { //teleport
                 if (GameManager.gameMode != GameManager.GameMode.SingleRoom) {
                     //combined mode
                     roomPrefab = roomChoices[3];
@@ -34,8 +54,8 @@ public class TimRandomChoiceRoom : Room
                 else {
                     roomPrefab = roomChoices[0];
                 }
-            }else {
-                roomPrefab = roomChoices[0]; //walls
+            }else { //tunnel or all walls
+                roomPrefab = roomChoices[4]; //walls
             }
             
         }
@@ -44,4 +64,6 @@ public class TimRandomChoiceRoom : Room
         GameObject.Find("_GameManager").GetComponent<TimRoomManager>().TimRooms.Add(createdRoom);
         return createdRoom;
     }
+
+    
 }

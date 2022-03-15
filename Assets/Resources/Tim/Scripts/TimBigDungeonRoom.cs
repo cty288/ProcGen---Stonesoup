@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class TimBigDungeonRoom : TimDungeonRoom{
     [SerializeField] private List<GameObject> enemyPrefabs;
+  
     protected override float DungeonRandomness {
         get {
             return dungeonRandomness * 2;
@@ -25,10 +26,19 @@ public class TimBigDungeonRoom : TimDungeonRoom{
 
         base.fillRoom(ourGenerator, requiredExits);
 
-
+        SpawnEnemySpawner();
         SpawnRandomEnemy();
     }
-
+    private void SpawnEnemySpawner()
+    {
+        List<Vector2Int> openAreas = GetOpenAreas(2);
+        if (openAreas.Count > 0 && Random.Range(0, 100) <= 100)
+        {
+            Vector2Int openArea = GlobalFuncs.randElem(openAreas);
+            Tile.spawnTile(enemySpawnerPrefab, transform, openArea.x, openArea.y);
+            roomGrids[openArea.x, openArea.y] = 3;
+        }
+    }
     private void SpawnRandomEnemy()
     {
         List<Vector2Int> availableGrids = new List<Vector2Int>();
@@ -44,17 +54,38 @@ public class TimBigDungeonRoom : TimDungeonRoom{
             }
         }
 
-        int enemyNum = Random.Range(1, 4);
-
+        int enemyNum = Random.Range(2, 5);
+        int remainingGrids = availableGrids.Count;
         
         if (availableGrids.Count > enemyNum)
         {
             for (int i = 0; i < enemyNum; i++) {
-                Vector2Int spawnPos = availableGrids[Random.Range(0, availableGrids.Count)];
+                Vector2Int spawnPos = availableGrids[Random.Range(0, remainingGrids--)];
                 GameObject spawnPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
                 Tile.spawnTile(spawnPrefab, transform, spawnPos.x, spawnPos.y);
             }
         }
 
+    }
+
+    private List<Vector2Int> GetOpenAreas(int wallNeighbourMaxCount = 4)
+    {
+        List<Vector2Int> openAreaGrids = new List<Vector2Int>();
+
+        for (int i = 0; i < LevelGenerator.ROOM_WIDTH; i++)
+        {
+            for (int j = 0; j < LevelGenerator.ROOM_HEIGHT; j++)
+            {
+                if (roomGrids[i, j] <= 0)
+                {
+                    if (GetWallNeighbours(i, j, true).Count <= wallNeighbourMaxCount)
+                    {
+                        openAreaGrids.Add(new Vector2Int(i, j));
+                    }
+                }
+            }
+        }
+
+        return openAreaGrids;
     }
 }
