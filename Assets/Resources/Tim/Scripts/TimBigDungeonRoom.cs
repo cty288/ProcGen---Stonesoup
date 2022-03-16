@@ -28,6 +28,7 @@ public class TimBigDungeonRoom : TimDungeonRoom{
 
         SpawnEnemySpawner();
         SpawnRandomEnemy();
+        SpawnRat();
     }
     private void SpawnEnemySpawner()
     {

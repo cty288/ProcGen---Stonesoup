@@ -25,10 +25,11 @@ public class TimEnemySpawner : Tile {
             }
         }
     }
-
+    
     private Tile SpawnAEnemy() {
         Vector2 gridCoord = toGridCoord(new Vector2(localX,localY));
         if (Random.Range(0, 100) >= 30) { //normal
+            
             return  this.SpawnTile(GlobalFuncs.randElem(normalEnemies), transform.parent, (int) gridCoord.x , (int) gridCoord.y);
         }
         else { //rare

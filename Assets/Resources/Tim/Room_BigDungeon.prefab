@@ -63,6 +63,8 @@ MonoBehaviour:
     type: 3}
   currentFilled: 0
   exitLocations: []
+  ratPrefab: {fileID: 2558128495529429187, guid: d89cae6dafcffa34c8b44a62d62f5b14,
+    type: 3}
   enemyPrefabs:
   - {fileID: 1376035031062694, guid: 78f95855a030f41dd8db1eb469d7aee2, type: 3}
   - {fileID: 1097009321995878, guid: 7f119146519d742d7953341b07580643, type: 3}

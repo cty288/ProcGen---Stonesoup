@@ -167,8 +167,19 @@ public class TimDungeonRoom : Room {
         SpawnPortals();
         SpawnButton();
         SpawnGhost();
+        SpawnRat();
         SpawnGun();
       
+    }
+
+    [SerializeField] protected GameObject ratPrefab;
+    protected void SpawnRat() {
+        List<Vector2Int> openAreas = GetOpenAreas(3);
+        if (openAreas.Count > 0 && Random.Range(0, 100) <= 30)
+        {
+            Vector2Int openArea = GlobalFuncs.randElem(openAreas);
+            Tile.spawnTile(ratPrefab, transform, openArea.x, openArea.y);
+        }
     }
 
     private void SpawnEnemySpawner() {
