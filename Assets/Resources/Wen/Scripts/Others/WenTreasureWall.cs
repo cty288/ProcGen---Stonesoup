@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreasureWall : MonoBehaviour
+public class WenTreasureWall : MonoBehaviour
 {
     public List<GameObject> restSupplyList;
 

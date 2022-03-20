@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WenMill : MonoBehaviour
+public class WenMill : Tile
 {
-    float rotateSpeed;
+    public float rotateSpeed;
 
     void Update()
     {
-        transform.localEulerAngles += new Vector3(0, 0, rotateSpeed);
+        transform.localEulerAngles += new Vector3(0, 0, rotateSpeed*Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

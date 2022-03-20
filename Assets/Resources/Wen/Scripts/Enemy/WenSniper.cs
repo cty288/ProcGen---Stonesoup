@@ -7,7 +7,9 @@ public class WenSniper : WenEnemy
 {
     bool isAiming;
     float aimingTime;
+    public GameObject aimTarget;
 
+    public GameObject attachedAimTarget;
     private void Start()
     {
         InitializeEnemy();
@@ -15,7 +17,7 @@ public class WenSniper : WenEnemy
 
     private void Update()
     {
-        if (Detect(player.gameObject, 50f))
+        if (Detect(player.gameObject, 25f))
         {
             if (!isAiming)
             {
@@ -24,6 +26,7 @@ public class WenSniper : WenEnemy
             else if(isAiming)
             {
                 aimingTime -= Time.deltaTime;
+                attachedAimTarget.GetComponent<SpriteRenderer>().color = new Color(1, 1 - ((15 - aimingTime) / 15), 1 - ((15 - aimingTime) / 15));
                 if (aimingTime <= 0)
                 {
                     Shoot();
@@ -32,14 +35,16 @@ public class WenSniper : WenEnemy
         }
         else
         {
+            Destroy(attachedAimTarget);
             StopAiming();
         }
     }
 
     void StartAiming()
     {
-        aimingTime = 5f;
+        aimingTime = 15f;
         isAiming = true;
+        attachedAimTarget = Instantiate(aimTarget);
     }
 
     void StopAiming()
@@ -49,7 +54,7 @@ public class WenSniper : WenEnemy
 
     void Shoot()
     {
-        aimingTime = 5f;
+        aimingTime = 15f;
         player.takeDamage(player, 1);
     }
 }

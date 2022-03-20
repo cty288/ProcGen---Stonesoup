@@ -36,6 +36,8 @@ public class WenArmoredTurtle : WenEnemy
 
 	public bool isDefending;
 
+	public Sprite defendSprite, shootSprite;
+
 	public virtual void Start()
 	{
 		_targetGridPos = Tile.toGridCoord(globalX, globalY);
@@ -90,21 +92,33 @@ public class WenArmoredTurtle : WenEnemy
 
 
 
-		if(Detect(player.gameObject, 15))
+		if(Detect(player.gameObject, 10))
         {
 			isDefending = true;
+			gameObject.GetComponent<SpriteRenderer>().sprite = defendSprite;
         }
-		else if(Detect(player.gameObject, 30))
+		else if(Detect(player.gameObject, 20))
         {
 			isDefending = false;
+			gameObject.GetComponent<SpriteRenderer>().sprite = shootSprite;
 			if (fireInterval <= 0)
 			{
 				Fire();
 			}
 			fireInterval -= Time.deltaTime;
-        }
+
+			if (fireInterval < 0.2f)
+			{
+				_sprite.enabled = false;
+			}
+			else
+			{
+				_sprite.enabled = true;
+			}
+		}
         else
         {
+			gameObject.GetComponent<SpriteRenderer>().sprite = shootSprite;
 			isDefending = false;
         }
 

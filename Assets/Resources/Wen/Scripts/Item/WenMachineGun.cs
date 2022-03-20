@@ -13,11 +13,12 @@ public class WenMachineGun : Tile
 
 
 
-	public float cooldownTime = 0.05f;
+	public float cooldownTime = 0.06f;
 
 	protected float _cooldownTimer;
 
 	public bool isOn;
+
 
 	protected void aim()
 	{
@@ -57,14 +58,15 @@ public class WenMachineGun : Tile
 
         if (isOn)
         {
-			Fire(this);
+			Fire(onState);
         }
 
 		updateSpriteSorting();
 	}
-
+	Tile onState;
 	public override void useAsItem(Tile tileUsingUs)
 	{
+		onState = tileUsingUs;
 		isOn = !isOn;
 	}
 
@@ -96,7 +98,7 @@ public class WenMachineGun : Tile
 		}
 
 		muzzleFlashObj.SetActive(true);
-		Invoke("deactivateFlash", 0.05f);
+		Invoke("deactivateFlash", 0.06f);
 
 		Vector2 offsetDirection = new Vector2(tileUsingUs.aimDirection.x * Random.Range(0.9f, 1.1f), tileUsingUs.aimDirection.y * Random.Range(0.9f, 1.1f));
 		tileUsingUs.addForce(-recoilForce * offsetDirection.normalized);
@@ -109,12 +111,20 @@ public class WenMachineGun : Tile
 
 		newBullet.GetComponent<Tile>().init();
 		newBullet.GetComponent<Tile>().addForce(offsetDirection.normalized * shootForce);
+		Debug.Log(offsetDirection.normalized * shootForce);
 
 		_cooldownTimer = cooldownTime;
 
 	}
 
-	public void deactivateFlash()
+	public override void dropped(Tile tileDroppingUs)
+	{
+		isOn = false;
+		base.dropped(tileDroppingUs);
+	}
+
+
+		public void deactivateFlash()
 	{
 		muzzleFlashObj.SetActive(false);
 	}
