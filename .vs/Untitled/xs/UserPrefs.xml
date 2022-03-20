@@ -1,29 +1,54 @@
 ﻿<Properties StartupConfiguration="{68B96012-62E2-EB6E-D159-884EB7E830EB}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/Wen/Scripts/TileExtension.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/Wen/Scripts/Enemy/WenEnemy.cs">
     <Files>
       <File FileName="Assets/Resources/Wen/Scripts/HealthBooster.cs" Line="10" Column="33" />
-      <File FileName="Assets/Scripts/GameObjects/Tile.cs" Line="63" Column="28" />
-      <File FileName="Assets/Resources/Wen/Scripts/TileExtension.cs" Line="29" Column="24" />
-      <File FileName="Assets/Scripts/GameObjects/BasicAICreature.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GameObjects/Exit.cs" Line="1" Column="1" />
-      <File FileName="Assets/Resources/Tim/Scripts/Apple.cs" Line="1" Column="1" />
-      <File FileName="Assets/Resources/Tim/Scripts/Missile.cs" Line="1" Column="1" />
-      <File FileName="Assets/Resources/Tim/Scripts/TimRandomChoiceRoom.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameObjects/Tile.cs" Line="502" Column="17" />
+      <File FileName="Assets/Resources/Wen/Scripts/TileExtension.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameObjects/BasicAICreature.cs" />
+      <File FileName="Assets/Scripts/GameObjects/Exit.cs" />
+      <File FileName="Assets/Resources/Tim/Scripts/Apple.cs" />
+      <File FileName="Assets/Resources/Tim/Scripts/Missile.cs" />
+      <File FileName="Assets/Resources/Tim/Scripts/TimRandomChoiceRoom.cs" />
       <File FileName="Assets/Resources/Tim/Scripts/TimPortalGun.cs" Line="1" Column="1" />
-      <File FileName="Assets/Resources/Tim/Scripts/TimDungeonRoom.cs" Line="19" Column="37" />
-      <File FileName="Assets/Resources/Tim/Scripts/Portal.cs" Line="13" Column="56" />
-      <File FileName="Assets/Resources/Tim/Scripts/PortalBullet.cs" Line="1" Column="1" />
-      <File FileName="Assets/Resources/Tim/Scripts/TimBigDungeonRoom.cs" Line="1" Column="1" />
-      <File FileName="Assets/Resources/Tim/Scripts/TimGhost.cs" Line="1" Column="1" />
-      <File FileName="Assets/Resources/Tim/Scripts/TimRoom.cs" Line="1" Column="1" />
-      <File FileName="Assets/Resources/Tim/Scripts/TimRoomManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Resources/Tim/Scripts/TimRoomTest.cs" Line="1" Column="1" />
-      <File FileName="Assets/Resources/Tim/Scripts/TimTeleportRoom.cs" Line="1" Column="1" />
-      <File FileName="Assets/Resources/Tim/Scripts/TimTreasureRoom.cs" Line="1" Column="1" />
-      <File FileName="Assets/Resources/Tim/Scripts/TimValidatedRoom.cs" Line="1" Column="1" />
-      <File FileName="Assets/Resources/Tim/Scripts/TimValidatedRoomPicker.cs" Line="1" Column="1" />
-      <File FileName="Assets/Resources/Tim/Scripts/AirStrikeButton.cs" Line="5" Column="1" />
-      <File FileName="Assets/Resources/Wen/Scripts/SpikeTrap.cs" Line="1" Column="1" />
+      <File FileName="Assets/Resources/Tim/Scripts/TimDungeonRoom.cs" />
+      <File FileName="Assets/Resources/Tim/Scripts/Portal.cs" />
+      <File FileName="Assets/Resources/Tim/Scripts/PortalBullet.cs" />
+      <File FileName="Assets/Resources/Tim/Scripts/TimBigDungeonRoom.cs" />
+      <File FileName="Assets/Resources/Tim/Scripts/TimGhost.cs" />
+      <File FileName="Assets/Resources/Tim/Scripts/TimRoom.cs" />
+      <File FileName="Assets/Resources/Tim/Scripts/TimRoomManager.cs" />
+      <File FileName="Assets/Resources/Tim/Scripts/TimRoomTest.cs" />
+      <File FileName="Assets/Resources/Tim/Scripts/TimTeleportRoom.cs" />
+      <File FileName="Assets/Resources/Tim/Scripts/TimTreasureRoom.cs" />
+      <File FileName="Assets/Resources/Tim/Scripts/AirStrikeButton.cs" />
+      <File FileName="Assets/Resources/Wen/Scripts/SpikeTrap.cs" Line="7" Column="1" />
+      <File FileName="Assets/Resources/Wen/Scripts/Enemy/WenEnemy.cs" Line="13" Column="1" />
+      <File FileName="Assets/Resources/Wen/Scripts/SpikeCart.cs" />
+      <File FileName="Assets/Resources/Wen/Scripts/Enemy/WenSniper.cs" Line="15" Column="13" />
+      <File FileName="Assets/Scripts/GameObjects/Player.cs" />
+      <File FileName="Assets/Resources/Wen/Scripts/WenRoom.cs" />
+      <File FileName="Assets/Scripts/GameObjects/Wall.cs" />
+      <File FileName="Assets/Resources/Wen/Scripts/Others/WenTreasureWall.cs" Line="5" Column="44" />
+      <File FileName="Assets/Resources/Wen/Scripts/Enemy/WenArmoredTurtle.cs" Line="110" Column="28" />
+      <File FileName="Assets/Resources/Tim/Scripts/TimRat.cs" Line="1" Column="1" />
+      <File FileName="Assets/Resources/AP/Scripts/apt283BasicEnemy.cs" />
+      <File FileName="Assets/Scripts/Util/ObjShake.cs" />
+      <File FileName="Assets/Resources/AP/Scripts/apt283BasicTurret.cs" />
+      <File FileName="Assets/Resources/Wen/Scripts/Item/WenWorldWallDestroyer.cs" Line="16" Column="15" />
+      <File FileName="Assets/Resources/Wen/Scripts/Pickaxe.cs" />
+      <File FileName="Assets/Resources/Wen/Scripts/SpeedBooster.cs" />
+      <File FileName="Assets/Resources/AP/Scripts/apt283Gun.cs" Line="51" Column="30" />
+      <File FileName="Assets/Resources/Wen/Scripts/Item/WenMachineGun.cs" Line="115" Column="1" />
+      <File FileName="Assets/Resources/Wen/Scripts/Item/WenSpikeShield.cs" Line="88" Column="4" />
+      <File FileName="Assets/Resources/AP/Scripts/apt283Shield.cs" Line="5" Column="30" />
+      <File FileName="Assets/Resources/Wen/Scripts/Trap/WenMill.cs" Line="11" Column="83" />
+      <File FileName="Assets/Resources/AP/Scripts/apt283Bullet.cs" Line="1" Column="1" />
+      <File FileName="Assets/Resources/AP/Scripts/apt283Room.cs" Line="1" Column="1" />
+      <File FileName="Assets/Resources/AP/Scripts/apt283SearchRoom.cs" Line="1" Column="1" />
+      <File FileName="Assets/Resources/AP/Scripts/apt283SimpleBullet.cs" Line="21" Column="56" />
+      <File FileName="Assets/Resources/AP/Scripts/apt283EyeballTurretEye.cs" Line="38" Column="4" />
+      <File FileName="Assets/Resources/AP/Scripts/apt283Rock.cs" Line="1" Column="1" />
+      <File FileName="Assets/Resources/Wen/Scripts/WenAimTarget.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -31,17 +56,26 @@
           <Node name="Untitled" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Resources" expanded="True">
+                <Node name="AP" expanded="True">
+                  <Node name="Scripts" expanded="True" />
+                </Node>
                 <Node name="Tim" expanded="True">
                   <Node name="Scripts" expanded="True" />
                 </Node>
                 <Node name="Wen" expanded="True">
                   <Node name="Scripts" expanded="True">
-                    <Node name="TileExtension.cs" selected="True" />
+                    <Node name="Enemy" expanded="True">
+                      <Node name="WenEnemy.cs" selected="True" />
+                    </Node>
+                    <Node name="Item" expanded="True" />
+                    <Node name="Others" expanded="True" />
+                    <Node name="Trap" expanded="True" />
                   </Node>
                 </Node>
               </Node>
               <Node name="Scripts" expanded="True">
                 <Node name="GameObjects" expanded="True" />
+                <Node name="Util" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -51,7 +85,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="beea1f50-ef9e-4717-9277-8bd4da53b77e" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="fea7a67c-bde7-4acd-9f72-51b3bac266d2" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
