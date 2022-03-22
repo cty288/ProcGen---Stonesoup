@@ -14,5 +14,6 @@ public class WenAimTarget : MonoBehaviour
     void Update()
     {
         transform.position = player.transform.position;
+        GetComponent<SpriteRenderer>().sortingOrder++;
     }
 }

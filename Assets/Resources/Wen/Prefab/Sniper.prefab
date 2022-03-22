@@ -135,6 +135,7 @@ MonoBehaviour:
   player: {fileID: 0}
   aimTarget: {fileID: 6451545633531785987, guid: 78181a02e402e4f289ac084e3c8f4054,
     type: 3}
+  attachedAimTarget: {fileID: 0}
 --- !u!50 &1648799460094012684
 Rigidbody2D:
   serializedVersion: 4
@@ -143,7 +144,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164374350811181727}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
