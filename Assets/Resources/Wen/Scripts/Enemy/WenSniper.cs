@@ -57,4 +57,12 @@ public class WenSniper : WenEnemy
         aimingTime = 15f;
         player.takeDamage(player, 1);
     }
+
+    private void OnDestroy()
+    {
+        if (attachedAimTarget != null)
+        {
+            Destroy(attachedAimTarget);
+        }
+    }
 }

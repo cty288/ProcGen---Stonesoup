@@ -524,7 +524,7 @@ public class Tile : MonoBehaviour {
 		return tile;
 	}
 
-	
+
 
 }
 

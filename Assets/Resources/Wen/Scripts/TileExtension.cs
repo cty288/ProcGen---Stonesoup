@@ -26,6 +26,18 @@ public static class TileExtension
         return tile;
     }
 
+    public static Tile SpawnTile(GameObject tilePrefab, Transform parentOfTile, Vector2 position)
+    {
+        GameObject tileObj = GameObject.Instantiate(tilePrefab) as GameObject;
+        tileObj.transform.parent = parentOfTile;
+        Tile tile = tileObj.GetComponent<Tile>();
+        Vector2 tilePos = position;
+        tile.localX = tilePos.x;
+        tile.localY = tilePos.y;
+        tile.init();
+        return tile;
+    }
+
     public static void AddMaximumHealth(this Tile tile, int value)
     {
         int health = (int)tile.GetType().GetField("_startHealth", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(tile);
@@ -33,4 +45,6 @@ public static class TileExtension
         tile.GetType().GetField("_startHealth", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).SetValue(tile, health + value);
         tile.health += value;
     }
+
+
 }
