@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7610746475465904784}
-  - component: {fileID: 6581199938673297343}
+  - component: {fileID: 2313405866295382388}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6581199938673297343
+--- !u!114 &2313405866295382388
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,20 +40,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 1965585352857381325}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bda49e592a4044b6a806929d15d59301, type: 3}
+  m_Script: {fileID: 11500000, guid: b0805addd8f6e41c4910a17baddc2ad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomAuthor: Wen
+  roomAuthor: Wen's Rooms
   designedRoomFile: {fileID: 0}
   localTilePrefabs: []
   roomGridX: 0
   roomGridY: 0
-  RoomChoices:
-  - {fileID: -6677758836104665303, guid: a3cf42f742c80471f956b1c45ca5ce93, type: 3}
-  - {fileID: -1609175851526269524, guid: f4683f4e8cf2d47be92ffd323b7d9f4f, type: 3}
-  - {fileID: -8263213591346251051, guid: e7b7177f566524fbeb721c5a2a1f408c, type: 3}
-  - {fileID: 151406445883618388, guid: 6b6c8a457d86146b8ab8ab56235dc791, type: 3}
-  - {fileID: 7745814308208010802, guid: 09705b4a520f548ff97c9bf933f8b962, type: 3}
-  - {fileID: 2791269283560553723, guid: 393190ef0194b47c0bbc0999e2418436, type: 3}
-  - {fileID: 5414153916966867940, guid: ef45a1b6c78e0412e8404dc1e9657039, type: 3}
-  - {fileID: 2976420725511623579, guid: ace03bba1149643aaae8e48c248498e5, type: 3}
+  trapList:
+  - {fileID: 1806682559070806425, guid: 0aa5bb3e1ed1543d3ab2f733c1157749, type: 3}
+  mechanismList:
+  - {fileID: 1215785095147150, guid: 2b0738d5b2f5d4d9982b845d0d9dc73c, type: 3}
+  - {fileID: 1376035031062694, guid: 78f95855a030f41dd8db1eb469d7aee2, type: 3}
+  enemyList:
+  - {fileID: 1097009321995878, guid: 7f119146519d742d7953341b07580643, type: 3}
+  - {fileID: 1806682559070806425, guid: 1b3bfab2911144afcb1f78d19207269b, type: 3}
+  restSupplyList:
+  - {fileID: 1806682559070806425, guid: d865a67b128624e959cc831d8426e666, type: 3}
+  rewardList:
+  - {fileID: 1806682559070806425, guid: fa693b494989041789b87a62ca1f9eaf, type: 3}
+  - {fileID: 1614338125090674, guid: 1cfe79c11dbc34b7db1425bd72621df7, type: 3}
+  - {fileID: 1818043832211400, guid: a83210e6a34ab4991832690839ea3bfb, type: 3}
+  - {fileID: 1806682559070806425, guid: 7f043c43f1cc643ff83deb5b865c8a31, type: 3}
+  - {fileID: 1806682559070806425, guid: 98438929843d9480c97c014ee88ccaa1, type: 3}
+  roomContentType: 0
+  borderWallProbability: 0.3

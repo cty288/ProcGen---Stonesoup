@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4597672429793025109}
   - component: {fileID: -225366463301245919}
   - component: {fileID: 3671900170325842626}
-  - component: {fileID: 4803541265803559040}
+  - component: {fileID: 579135319084429350}
   m_Layer: 0
   m_Name: Apple
   m_TagString: Untagged
@@ -110,7 +110,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6, y: 1.2}
   m_EdgeRadius: 0
---- !u!114 &4803541265803559040
+--- !u!114 &579135319084429350
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,10 +119,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1806682559070806425}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5f860425095048a2bf4b54323ee21d7, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c812582c38a3124f93db065a2d88b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tags: 290
+  tags: 258
   tileName: Apple
   health: 1
   deathEffect: {fileID: 0}

@@ -26,9 +26,37 @@ public class WenRoom : Room
 	public RoomContentType roomContentType;
 
 	public float borderWallProbability = 0.3f;
-
-    public override void fillRoom(LevelGenerator ourGenerator, ExitConstraint requiredExits)
+    protected TimRoomManager roomManager;
+	public override void fillRoom(LevelGenerator ourGenerator, ExitConstraint requiredExits)
     {
+        if (!GameObject.Find("_GameManager").GetComponent<TimRoomManager>())
+        {
+            GameObject.Find("_GameManager").AddComponent<TimRoomManager>();
+        }
+        roomManager = GameObject.Find("_GameManager").GetComponent<TimRoomManager>();
+		
+
+        ExitConstraint additionalExits = roomManager.GetAdditionalExits(new Vector2Int(roomGridX, roomGridY));
+        if (additionalExits.downExitRequired)
+        {
+            requiredExits.addDirConstraint(Dir.Down);
+        }
+
+        if (additionalExits.leftExitRequired)
+        {
+            requiredExits.addDirConstraint(Dir.Left);
+        }
+
+        if (additionalExits.rightExitRequired)
+        {
+            requiredExits.addDirConstraint(Dir.Right);
+        }
+
+        if (additionalExits.upExitRequired)
+        {
+            requiredExits.addDirConstraint(Dir.Up);
+        }
+
 		roomContentType = GetRoomContentType();
 		if(roomContentType == RoomContentType.normal)
         {
@@ -72,7 +100,8 @@ public class WenRoom : Room
 		}
 		else if (randomIndex >= 55 && randomIndex < 60)
 		{
-			randomType = RoomContentType.reward;
+            randomType = RoomContentType.normal;
+			//randomType = RoomContentType.normal;
 		}
 		/*else if (randomIndex >= 60 && randomIndex < 62 && secretNum > 0)
 		{
@@ -103,7 +132,7 @@ public class WenRoom : Room
 				if ((y == LevelGenerator.ROOM_HEIGHT / 2 || y == LevelGenerator.ROOM_HEIGHT / 2 - 1) || (x == LevelGenerator.ROOM_WIDTH / 2 || x == LevelGenerator.ROOM_WIDTH / 2 - 1))
 				{
 					occupiedPositions[x, y] = false;
-					if (Random.value <= 0.33f)
+					if (Random.value <= 0.22f)
 					{
 						Tile.spawnTile(trapList[0], transform, x, y);
 					}
@@ -175,6 +204,17 @@ public class WenRoom : Room
 		{
 			for (int y = 0; y < LevelGenerator.ROOM_HEIGHT; y++)
 			{
+				if ((x >= 1 && x <= LevelGenerator.ROOM_WIDTH - 2) && y >= 1 && y <= LevelGenerator.ROOM_HEIGHT - 2){
+
+					float borderRoom = Mathf.Abs((Mathf.Abs(x - LevelGenerator.ROOM_WIDTH/2) + Mathf.Abs(y - LevelGenerator.ROOM_HEIGHT / 2)) * 0.1f);
+					if (Random.value <= borderRoom)
+                    {
+                        occupiedPositions[x, y] = true;
+                        Tile.spawnTile(ourGenerator.normalWallPrefab, transform, x, y);
+                    }
+				}
+				
+				/*
 				if (x == 0 || x == LevelGenerator.ROOM_WIDTH - 1 || y == 0 || y == LevelGenerator.ROOM_HEIGHT - 1)
 				{
 					// All border zones are occupied.
@@ -196,7 +236,7 @@ public class WenRoom : Room
                     {
 						occupiedPositions[x, y] = false;
 					}
-				}
+				}*/
 			}
 		}
 
@@ -257,9 +297,19 @@ public class WenRoom : Room
 		bool[,] occupiedPositions = new bool[LevelGenerator.ROOM_WIDTH, LevelGenerator.ROOM_HEIGHT];
 		for (int x = 0; x < LevelGenerator.ROOM_WIDTH; x++)
 		{
-			for (int y = 0; y < LevelGenerator.ROOM_HEIGHT; y++)
-			{
-				if (x == 0 || x == LevelGenerator.ROOM_WIDTH - 1 || y == 0 || y == LevelGenerator.ROOM_HEIGHT - 1)
+			for (int y = 0; y < LevelGenerator.ROOM_HEIGHT; y++) {
+				if ((x >= 1 && x <= LevelGenerator.ROOM_WIDTH - 2) && y >= 1 && y <= LevelGenerator.ROOM_HEIGHT - 2)
+                {
+					float borderRoom = Mathf.Abs(1 - x * y * 0.2f);
+					if (Random.value <= borderRoom)
+                    {
+                        occupiedPositions[x, y] = true;
+                        Tile.spawnTile(ourGenerator.normalWallPrefab, transform, x, y);
+                    }
+                }
+
+				/*
+                if (x == 0 || x == LevelGenerator.ROOM_WIDTH - 1 || y == 0 || y == LevelGenerator.ROOM_HEIGHT - 1)
 				{
 					// All border zones are occupied.
 					occupiedPositions[x, y] = true;
@@ -267,11 +317,14 @@ public class WenRoom : Room
 				else if (x == 1 || x == LevelGenerator.ROOM_WIDTH - 2 || y == 1 || y == LevelGenerator.ROOM_HEIGHT - 2)
 				{
 					// All border zones (in 1 grid) are occupied.
-					occupiedPositions[x, y] = true;
+                    if (Random.value <= 0.5) {
+                        occupiedPositions[x, y] = true;
+					}
+						
 				}
 				else
 				{
-					if (Random.value <= 0.2f)
+					if (Random.value <= 0.4f)
 					{
 						occupiedPositions[x, y] = true;
 						Tile.spawnTile(ourGenerator.normalWallPrefab, transform, x, y);
@@ -280,7 +333,7 @@ public class WenRoom : Room
 					{
 						occupiedPositions[x, y] = false;
 					}
-				}
+				}*/
 			}
 		}
 
@@ -295,6 +348,7 @@ public class WenRoom : Room
 				continue;
 			}
 
+		//	Debug.Log(restSupplyList[0].name);
 			Tile.spawnTile(restSupplyList[0], transform, x, y);
 		}
 

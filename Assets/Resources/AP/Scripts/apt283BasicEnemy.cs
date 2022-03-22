@@ -4,7 +4,8 @@ using UnityEngine;
 
 // Example of a basic enemy tile.
 // Enemies have the following behavior:
-// Every once in a while, they'll try to move to a neighboring empty spot.
+// Every once in a
+// , they'll try to move to a neighboring empty spot.
 // If they are empty handed and find a weapon, they pick up the weapon.
 // Every once in a while, they scan for friendly tiles.
 // If they find a friendly tile and they're holding a weapon, they aim the weapon at the friendly tile

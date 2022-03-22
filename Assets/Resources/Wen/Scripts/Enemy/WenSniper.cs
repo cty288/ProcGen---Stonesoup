@@ -17,7 +17,7 @@ public class WenSniper : WenEnemy
 
     private void Update()
     {
-        if (Detect(player.gameObject, 25f))
+        if (Detect(player.gameObject, 25f) && canSeeTile(player))
         {
             if (!isAiming)
             {

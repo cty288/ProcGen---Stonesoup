@@ -74,7 +74,8 @@ public class apt283Sword : Tile {
 		_swingAngle = 0;
 	}
 
-	// Can't drop us while we're swinging.
+	// Can't drop us
+	// we're swinging.
 	public override void dropped(Tile tileDroppingUs) {
 		if (_swinging) {
 			return;

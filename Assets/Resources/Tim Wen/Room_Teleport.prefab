@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7956038860077961954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2379481201128133005}
+  - component: {fileID: 4360633859293524372}
+  m_Layer: 0
+  m_Name: Room_Teleport
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2379481201128133005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7956038860077961954}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 51.114243, y: 23.896324, z: -37.149647}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4360633859293524372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7956038860077961954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5479b94433a1bf3439ee066b8460af5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomAuthor: Tim (Teleport Room)
+  designedRoomFile: {fileID: 0}
+  localTilePrefabs: []
+  roomGridX: 0
+  roomGridY: 0
+  portalPrefab: {fileID: 5653168957430741782, guid: 3111f8ef65084c9458cd75c70bdce08a,
+    type: 3}
+  treasurePrefabs:
+  - {fileID: 8591022547664489031, guid: 10c2065b2324491428fae7f040482600, type: 3}
+  - {fileID: 1709880916603501921, guid: 72b08948c3100784eb521fc56555af23, type: 3}
+  - {fileID: 5463505456437748878, guid: 88668186af0354ca7b8135befebf3dc5, type: 3}
+  - {fileID: 1806682559070806425, guid: fa693b494989041789b87a62ca1f9eaf, type: 3}
+  - {fileID: 1806682559070806425, guid: 98438929843d9480c97c014ee88ccaa1, type: 3}
+  - {fileID: 6727122831405063052, guid: e65b69d5450604ccbaa8f09af5d53ac8, type: 3}
+  exitLocations: []
