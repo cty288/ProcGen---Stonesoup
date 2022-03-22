@@ -6,6 +6,8 @@ using UnityEngine;
 public class TimRandomChoiceRoom : Room
 {
     public GameObject[] roomChoices;
+    public List<GameObject> designedRooms;
+
     protected TimRoomManager roomManager;
     [SerializeField] private GameObject enemySpawnerPrefab;
     public override Room createRoom(ExitConstraint requiredExits)
@@ -26,6 +28,7 @@ public class TimRandomChoiceRoom : Room
 
 
             if (exitCount == 1) {
+                Debug.Log("Exit count: 1");
                 //Debug.Log("RandomChoiceRoom: "+ new Vector2Int(roomGridX, roomGridY));
                 int spawnChance = Random.Range(0, 100);
                 if (spawnChance >= 70) {
@@ -35,20 +38,35 @@ public class TimRandomChoiceRoom : Room
                     roomPrefab = roomChoices[0]; //dungeon
                 }
                 else {
-                    roomPrefab = roomChoices[6]; //Wen room
+                    if (Random.Range(0, 100) >= 50) {
+                        roomPrefab = roomChoices[6]; //Wen room
+                    }
+                    else {
+                        roomPrefab = GlobalFuncs.randElem(designedRooms); //Wen room
+                    }
                 }
             }
             else {
                 int roomChance = Random.Range(0, 100);
-                if (roomChance > 60) {
+                if (roomChance > 70) {
                     // roomPrefab = roomChoices[5]; //Wen's room
                     roomPrefab = roomChoices[0]; //dungeon
                 }
-                else if(roomChance>=40){
+                else if(roomChance>=55){
                     roomPrefab = roomChoices[5]; //grid
                 }
+                else if(roomChance>=10){
+                    if (Random.Range(0, 100) >= 50)
+                    {
+                        roomPrefab = roomChoices[6]; //Wen room
+                    }
+                    else
+                    {
+                        roomPrefab = GlobalFuncs.randElem(designedRooms); //Wen room
+                    }
+                }
                 else {
-                    roomPrefab = roomChoices[6]; //Wen room
+                    roomPrefab = roomChoices[4]; //tunnel
                 }
                
             }
@@ -56,9 +74,11 @@ public class TimRandomChoiceRoom : Room
         }
         else {
             int spawnChance = Random.Range(0, 100);
-            if (spawnChance <= 15) { 
+            if (spawnChance <= 10) { 
                 roomPrefab = roomChoices[1]; //treasure
-            }else if(spawnChance>15 && spawnChance<=40) { //big dungeon
+            }else if (spawnChance >=10 && spawnChance <= 20) {
+                roomPrefab = roomChoices[4]; //tunnel
+            } else if(spawnChance>20 && spawnChance<=40) { //big dungeon
                 roomPrefab = roomChoices[2];
             }else if (spawnChance>40 && spawnChance<=50) { //teleport
                 if (GameManager.gameMode != GameManager.GameMode.SingleRoom) {
@@ -69,11 +89,17 @@ public class TimRandomChoiceRoom : Room
                     roomPrefab = roomChoices[0];
                 }
             }else if(spawnChance>50 && spawnChance<=90){ //tunnel or all walls
-                roomPrefab = roomChoices[0]; //walls
-                
+                if (Random.Range(0, 100) >= 50)
+                {
+                    roomPrefab = roomChoices[6]; //Wen room
+                }
+                else
+                {
+                    roomPrefab = GlobalFuncs.randElem(designedRooms); //Wen room
+                }
             }
             else {
-                roomPrefab = roomChoices[6]; //wen
+                roomPrefab = roomChoices[0]; //walls
             }
             
         }

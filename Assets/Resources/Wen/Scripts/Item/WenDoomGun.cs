@@ -108,6 +108,7 @@ public class WenDoomGun : Tile
 		newBullet.GetComponent<Tile>().addForce(tileUsingUs.aimDirection.normalized * shootForce);
 
 		_cooldownTimer = cooldownTime;
+		die();
 	}
 
 	public void deactivateFlash()

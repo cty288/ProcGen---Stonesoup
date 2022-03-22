@@ -27,7 +27,18 @@ public class WenRoom : Room
 
 	public float borderWallProbability = 0.3f;
     protected TimRoomManager roomManager;
-	public override void fillRoom(LevelGenerator ourGenerator, ExitConstraint requiredExits)
+
+    [SerializeField] private List<Room> designedRooms;
+    public override Room createRoom(ExitConstraint requiredExits) {
+        if (Random.Range(0, 100) >= 50) {
+            return base.createRoom(requiredExits);
+		}
+		//Debug.Log("Designed room");
+        Room createdRoom = GlobalFuncs.randElem(designedRooms).createRoom(requiredExits);
+        return createdRoom;
+    }
+
+    public override void fillRoom(LevelGenerator ourGenerator, ExitConstraint requiredExits)
     {
         if (!GameObject.Find("_GameManager").GetComponent<TimRoomManager>())
         {

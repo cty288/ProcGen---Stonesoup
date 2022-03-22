@@ -41,7 +41,10 @@ public class WenDoomBullet : Tile
 				|| collision.gameObject.GetComponent<Tile>().hasTag(TileTags.Enemy)
 				|| collision.gameObject.GetComponent<Tile>().hasTag(TileTags.Creature))
 			{
-				collision.gameObject.GetComponent<Tile>().takeDamage(collision.gameObject.GetComponent<Tile>(), 99999, DamageType.Explosive);
+                if (!collision.gameObject.GetComponent<Tile>().hasTag(TileTags.Player)) {
+                    collision.gameObject.GetComponent<Tile>().takeDamage(collision.gameObject.GetComponent<Tile>(), 99999, DamageType.Explosive);
+				}
+				
 			}
 		}
 	}

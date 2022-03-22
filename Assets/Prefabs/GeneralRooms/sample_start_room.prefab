@@ -46,7 +46,7 @@ MonoBehaviour:
   roomAuthor: AP Thomson
   designedRoomFile: {fileID: 4900000, guid: 238b601d8b551461db48fb05e5ca8637, type: 3}
   localTilePrefabs:
-  - {fileID: 5196676050311343065, guid: ae97c2c791de74d52bd5861900fc4f88, type: 3}
+  - {fileID: 5196676050311343065, guid: 6a20cb177ddf36e4b80a08d245240847, type: 3}
   - {fileID: 6727122831405063052, guid: e65b69d5450604ccbaa8f09af5d53ac8, type: 3}
   - {fileID: 1806682559070806425, guid: fa693b494989041789b87a62ca1f9eaf, type: 3}
   roomGridX: 0

@@ -57,7 +57,7 @@ MonoBehaviour:
   - {fileID: 1097009321995878, guid: 7f119146519d742d7953341b07580643, type: 3}
   - {fileID: 1806682559070806425, guid: 1b3bfab2911144afcb1f78d19207269b, type: 3}
   restSupplyList:
-  - {fileID: 1806682559070806425, guid: d865a67b128624e959cc831d8426e666, type: 3}
+  - {fileID: 8591022547664489031, guid: 10c2065b2324491428fae7f040482600, type: 3}
   rewardList:
   - {fileID: 1806682559070806425, guid: fa693b494989041789b87a62ca1f9eaf, type: 3}
   - {fileID: 1614338125090674, guid: 1cfe79c11dbc34b7db1425bd72621df7, type: 3}
@@ -66,3 +66,16 @@ MonoBehaviour:
   - {fileID: 1806682559070806425, guid: 98438929843d9480c97c014ee88ccaa1, type: 3}
   roomContentType: 0
   borderWallProbability: 0.3
+  designedRooms:
+  - {fileID: 3803505416060731678, guid: 4e301fcdbc828b0428b873a45c1e0625, type: 3}
+  - {fileID: 7173412044101329373, guid: 4498a5edda2f9c643b622d3890ac5928, type: 3}
+  - {fileID: 7161430911515905065, guid: 72542af933f43f14a875d9b4156c9f9c, type: 3}
+  - {fileID: 435971638873425960, guid: cd2f1c8bed10f7148a11793857c3b1d0, type: 3}
+  - {fileID: 7323425778208631743, guid: 206c17487dbc7cb4db213dd3901b5ae0, type: 3}
+  - {fileID: 3053756196244320724, guid: ed966a1f934903146b9f44fa1dc7ea03, type: 3}
+  - {fileID: 1886421254874394490, guid: b8730820e12ab0f4cb765f7935ea603c, type: 3}
+  - {fileID: 2536124562410699507, guid: 379ea5e5d123def48a364bc4239bc5dc, type: 3}
+  - {fileID: 7617067148183203803, guid: a9d13e8100bbdad4f9ad122d122a2c14, type: 3}
+  - {fileID: 3165716761729537158, guid: 19831f75ad037a749bd84beb138da8ed, type: 3}
+  - {fileID: 2224100443667166269, guid: 4fa5553b781e69741bad6768de579b76, type: 3}
+  - {fileID: 7711085385498349233, guid: 28063e05942bd2748b592f8de6b1febb, type: 3}

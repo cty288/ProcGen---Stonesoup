@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class ObjectGenerator : Tile
 {
-    public List<GameObject> TilesForGeneratingList;
+    public List<GameObject> HighPossibilityTilesForGeneratingList;
+    public List<GameObject> LowPossibilityTilesForGeneratingList;
 
-    void RandomGenerate()
-    {
-        int index = Random.Range(0, TilesForGeneratingList.Count);
-        TileExtension.SpawnTile(TilesForGeneratingList[index], transform.parent, transform.localPosition);
+    void RandomGenerate() {
+        GameObject objToSpawn;
+        if (Random.Range(0, 100) >= 30) {
+            objToSpawn =
+                HighPossibilityTilesForGeneratingList[Random.Range(0, HighPossibilityTilesForGeneratingList.Count)];
+        }
+        else {
+            objToSpawn =
+                LowPossibilityTilesForGeneratingList[Random.Range(0, LowPossibilityTilesForGeneratingList.Count)];
+        }
+      
+        TileExtension.SpawnTile(objToSpawn, transform.parent, transform.localPosition);
         Destroy(gameObject);
     }
 

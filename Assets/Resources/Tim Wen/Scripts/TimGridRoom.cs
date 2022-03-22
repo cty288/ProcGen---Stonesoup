@@ -11,6 +11,8 @@ public class TimGridRoom : Room {
 
     [SerializeField] private GameObject portalPrefab;
 
+    [SerializeField] private List<GameObject> enemyPrefabs;
+
     [SerializeField] private GameObject ratPrefab;
     private void Awake() {
         roomManager = GameObject.Find("_GameManager").GetComponent<TimRoomManager>();
@@ -102,7 +104,7 @@ public class TimGridRoom : Room {
             TimRat rat = Tile.spawnTile(ratPrefab, transform, openArea.x, openArea.y) as TimRat;
             rat.moveTimeInterval = 2;
         }
-       
+        SpawnEnemies();
 
 
         SpawnWalls(requiredExits, ourGenerator);
@@ -205,6 +207,16 @@ public class TimGridRoom : Room {
         }
 
         return cloestPoint;
+    }
+
+    private void SpawnEnemies()
+    {
+        List<Vector2Int> openAreas = GetOpenAreas(2);
+        if (openAreas.Count > 0 && Random.Range(0, 100) <= 80)
+        {
+            Vector2Int openArea = GlobalFuncs.randElem(openAreas);
+            Tile.spawnTile(GlobalFuncs.randElem(enemyPrefabs), transform, openArea.x, openArea.y);
+        }
     }
     private List<Vector2Int> GetOpenAreas(int wallNeighbourMaxCount = 4)
     {

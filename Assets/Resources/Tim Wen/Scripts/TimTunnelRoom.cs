@@ -33,16 +33,22 @@ public class TimTunnelRoom : Room
         ExitConstraint additionalExits = roomManager.GetAdditionalExits(new Vector2Int(roomGridX, roomGridY));
        //Debug.Log( "TunnelRoom" + new Vector2Int(roomGridX, roomGridY));
         requiredExits = SetupRequiredExits(requiredExits, additionalExits);
+        int exitCount = Random.Range(0, 4);
 
+        
 
-        if (requiredExits.requiredExitLocations().ToList().Count > 0) {
+        if (requiredExits.requiredExitLocations().ToList().Count > 0|| exitCount>0) {
             //always contain at least 1 element
+            if (requiredExits.requiredExitLocations().ToList().Count == 0) {
+                requiredExits.addDirConstraint((Dir) Random.Range(0, 4));
+            }
+            
             List<Vector2Int> entrances = requiredExits.requiredExitLocations().ToList();
            // entrances.AddRange(roomManager.GetAdditionalExits(new Vector2Int(roomGridX, roomGridY)).requiredExitLocations().ToList());
             
             entrance = entrances.First();
 
-            int exitCount = Random.Range(0, 4);
+          
 
             if (exitCount == 0) { //dead end -> generate treasure
                 Vector2Int exitLocationEnd = new Vector2Int(Random.Range(0, LevelGenerator.ROOM_WIDTH - 1),

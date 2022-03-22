@@ -57,4 +57,5 @@ MonoBehaviour:
   - {fileID: 1806682559070806425, guid: fa693b494989041789b87a62ca1f9eaf, type: 3}
   - {fileID: 1806682559070806425, guid: 98438929843d9480c97c014ee88ccaa1, type: 3}
   - {fileID: 6727122831405063052, guid: e65b69d5450604ccbaa8f09af5d53ac8, type: 3}
+  - {fileID: 5196676050311343065, guid: 511ea94ff0ecd7f479cb739125327e8a, type: 3}
   exitLocations: []
