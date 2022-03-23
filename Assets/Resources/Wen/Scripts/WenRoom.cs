@@ -30,7 +30,7 @@ public class WenRoom : Room
 
     [SerializeField] private List<Room> designedRooms;
     public override Room createRoom(ExitConstraint requiredExits) {
-        if (Random.Range(0, 100) >= 50) {
+        if (Random.Range(0, 100) >= 70) {
             return base.createRoom(requiredExits);
 		}
 		//Debug.Log("Designed room");

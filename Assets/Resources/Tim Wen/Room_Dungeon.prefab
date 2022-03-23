@@ -53,8 +53,8 @@ MonoBehaviour:
   buttonPrefab: {fileID: 2910250241211345500, guid: 8828cafbb44fa9840a183ad3cd2db689,
     type: 3}
   dungeonRandomness: 17
-  dungeonSpawnRandomness: 35
-  maxFill: 45
+  dungeonSpawnRandomness: 36.2
+  maxFill: 30
   ghostPrefab: {fileID: 8817502390254545684, guid: dff920d8801ac884e89e9a37bf6a136c,
     type: 3}
   portalGunPrefab: {fileID: 1709880916603501921, guid: 72b08948c3100784eb521fc56555af23,

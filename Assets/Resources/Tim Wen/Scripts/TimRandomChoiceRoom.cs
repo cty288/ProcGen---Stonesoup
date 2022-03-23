@@ -48,7 +48,7 @@ public class TimRandomChoiceRoom : Room
             }
             else {
                 int roomChance = Random.Range(0, 100);
-                if (roomChance > 70) {
+                if (roomChance > 65) {
                     // roomPrefab = roomChoices[5]; //Wen's room
                     roomPrefab = roomChoices[0]; //dungeon
                 }
@@ -56,7 +56,7 @@ public class TimRandomChoiceRoom : Room
                     roomPrefab = roomChoices[5]; //grid
                 }
                 else if(roomChance>=10){
-                    if (Random.Range(0, 100) >= 50)
+                    if (Random.Range(0, 100) >= 70)
                     {
                         roomPrefab = roomChoices[6]; //Wen room
                     }
@@ -80,7 +80,7 @@ public class TimRandomChoiceRoom : Room
                 roomPrefab = roomChoices[4]; //tunnel
             } else if(spawnChance>20 && spawnChance<=40) { //big dungeon
                 roomPrefab = roomChoices[2];
-            }else if (spawnChance>40 && spawnChance<=50) { //teleport
+            }else if (spawnChance>40 && spawnChance<=45) { //teleport
                 if (GameManager.gameMode != GameManager.GameMode.SingleRoom) {
                     //combined mode
                     roomPrefab = roomChoices[3];
@@ -88,8 +88,8 @@ public class TimRandomChoiceRoom : Room
                 else {
                     roomPrefab = roomChoices[0];
                 }
-            }else if(spawnChance>50 && spawnChance<=90){ //tunnel or all walls
-                if (Random.Range(0, 100) >= 50)
+            }else if(spawnChance>45 && spawnChance<=90){ //tunnel or all walls
+                if (Random.Range(0, 100) >= 70)
                 {
                     roomPrefab = roomChoices[6]; //Wen room
                 }
