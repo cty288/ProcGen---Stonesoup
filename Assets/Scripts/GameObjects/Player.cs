@@ -228,6 +228,7 @@ public class Player : Tile {
 		{
 			Debug.Log("Flip");
 			flip();
+
 		}
 	}
 
