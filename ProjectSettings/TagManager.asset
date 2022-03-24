@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Tile
   - Exit
+  - player
+  - Teleporter
   layers:
   - Default
   - TransparentFX
