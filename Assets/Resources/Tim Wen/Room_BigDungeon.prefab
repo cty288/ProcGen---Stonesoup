@@ -50,7 +50,7 @@ MonoBehaviour:
   roomGridY: 0
   portalPrefab: {fileID: 5653168957430741782, guid: 3111f8ef65084c9458cd75c70bdce08a,
     type: 3}
-  buttonPrefab: {fileID: 2910250241211345500, guid: 8828cafbb44fa9840a183ad3cd2db689,
+  propLists: {fileID: 5196676050311343065, guid: 273b6f081a002634498063fa81d28ada,
     type: 3}
   dungeonRandomness: 6.7
   dungeonSpawnRandomness: 35

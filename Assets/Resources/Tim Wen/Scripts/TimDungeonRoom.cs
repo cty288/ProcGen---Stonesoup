@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public enum PathType {
@@ -12,7 +13,7 @@ public enum PathType {
 public class TimDungeonRoom : Room {
     [SerializeField] private GameObject portalPrefab;
 
-    [SerializeField] private GameObject buttonPrefab;
+    [FormerlySerializedAs("buttonPrefab")] [SerializeField] private GameObject propLists;
 
     protected int[,] roomGrids = new int[LevelGenerator.ROOM_WIDTH, LevelGenerator.ROOM_HEIGHT];
     [SerializeField] [Range(1, 20)] protected float dungeonRandomness;
@@ -170,7 +171,7 @@ public class TimDungeonRoom : Room {
         }
         SpawnEnemySpawner();
         SpawnPortals();
-        SpawnButton();
+        SpawnRandomProps();
         SpawnEnemies();
         SpawnRat();
         SpawnGun();
@@ -236,7 +237,7 @@ public class TimDungeonRoom : Room {
 
         return openAreaGrids;
     }
-    private void SpawnButton() {
+    protected void SpawnRandomProps() {
         List<Vector2Int> openAreaGrids = new List<Vector2Int>();
 
         for (int i = 0; i < LevelGenerator.ROOM_WIDTH; i++) {
@@ -249,11 +250,14 @@ public class TimDungeonRoom : Room {
             }
         }
 
-        if (Random.Range(0, 100) <= 10) {
+        int numSpawn = Random.Range(0, Mathf.Min(4, openAreaGrids.Count));
+        GlobalFuncs.shuffle(openAreaGrids);
+
+        for (int i = 0; i < numSpawn; i++) {
             if (openAreaGrids.Count > 0) {
-                Vector2Int buttonSpawnLocation = openAreaGrids[Random.Range(0, openAreaGrids.Count)];
-                Tile.spawnTile(buttonPrefab, transform, buttonSpawnLocation.x, buttonSpawnLocation.y);
-                roomGrids[buttonSpawnLocation.x, buttonSpawnLocation.y] = 3;
+                Vector2Int spawnLocation = openAreaGrids[i];
+                Tile.spawnTile(propLists, transform, spawnLocation.x, spawnLocation.y);
+                roomGrids[spawnLocation.x, spawnLocation.y] = 3;
             }
         }
     }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class SpeedDownZone : Tile
 {
     private void Start() {
-        GetComponent<SpriteRenderer>().sortingOrder = -20;
+        GetComponent<SpriteRenderer>().sortingOrder = -50;
     }
 
     // Start is called before the first frame update

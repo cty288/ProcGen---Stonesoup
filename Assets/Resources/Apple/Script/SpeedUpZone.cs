@@ -6,7 +6,7 @@ public class SpeedUpZone : Tile
 {
     private void Start()
     {
-        GetComponent<SpriteRenderer>().sortingOrder = -20;
+        GetComponent<SpriteRenderer>().sortingOrder = -50;
     }
     // Start is called before the first frame update
     void OnTriggerEnter2D(Collider2D collider)

@@ -80,7 +80,14 @@ public class TimGridRoom : Room {
         }
         List<Vector2Int> exits = requiredExits.requiredExitLocations().ToList();
         //spawn a portal
+        bool findSuitableArea = false;
+        
         Vector2Int openArea = GlobalFuncs.randElem(GetOpenAreas(2));
+        int iteration = 0;
+        while (Vector2Int.Distance(openArea,new Vector2Int(exits[0].x, exits[0].y)) <= 2 && iteration<=100) {
+            openArea = GlobalFuncs.randElem(GetOpenAreas(2));
+            iteration++;
+        }
 
         if (exits.Count > 0)
         {
