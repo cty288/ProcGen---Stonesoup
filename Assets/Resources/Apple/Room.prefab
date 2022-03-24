@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2633159128728012025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2709118445188481805}
+  - component: {fileID: 7664635113176592019}
+  m_Layer: 0
+  m_Name: Room
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2709118445188481805
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2633159128728012025}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 33.222435, y: 51.501865, z: -37.890816}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7664635113176592019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2633159128728012025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5c86560e3d97324abb33543a220e4d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomAuthor: Tim
+  designedRoomFile: {fileID: 0}
+  localTilePrefabs: []
+  roomGridX: 0
+  roomGridY: 0
+  roomChoices:
+  - {fileID: 8918495473547364284, guid: 9864c48939a670a4bb10a3da5ed3ac40, type: 3}
+  - {fileID: 1676176030810871775, guid: 517ad64492947b54ca272e4472f12927, type: 3}
+  - {fileID: 5972766908579195077, guid: 484879c687125b049b8a7e9654005fb9, type: 3}
+  - {fileID: 7956038860077961954, guid: a2bc2e4f42c83b649b422954e91b4299, type: 3}
+  - {fileID: 8918495473547364284, guid: 1e65e8023ceaaaa499c789e8697919f6, type: 3}
+  - {fileID: 8918495473547364284, guid: 2208b838184504d4f98b68ddbe7b3987, type: 3}
+  - {fileID: 1965585352857381325, guid: d1aa05007cdb541db96ccd504426cbd3, type: 3}
+  designedRooms:
+  - {fileID: 2779610390847202564, guid: 4e301fcdbc828b0428b873a45c1e0625, type: 3}
+  - {fileID: 2889082758647875587, guid: 4498a5edda2f9c643b622d3890ac5928, type: 3}
+  - {fileID: 4043688927948008971, guid: 72542af933f43f14a875d9b4156c9f9c, type: 3}
+  - {fileID: 4318942110337673878, guid: cd2f1c8bed10f7148a11793857c3b1d0, type: 3}
+  - {fileID: 6067525893724406115, guid: 206c17487dbc7cb4db213dd3901b5ae0, type: 3}
+  - {fileID: 1081727008220686669, guid: ed966a1f934903146b9f44fa1dc7ea03, type: 3}
+  - {fileID: 2078434800523327693, guid: b8730820e12ab0f4cb765f7935ea603c, type: 3}
+  - {fileID: 7578260607762100686, guid: 379ea5e5d123def48a364bc4239bc5dc, type: 3}
+  - {fileID: 3052138735136253995, guid: a9d13e8100bbdad4f9ad122d122a2c14, type: 3}
+  - {fileID: 6289898802457022451, guid: 19831f75ad037a749bd84beb138da8ed, type: 3}
+  - {fileID: 2223245335647947676, guid: 4fa5553b781e69741bad6768de579b76, type: 3}
+  - {fileID: 5214090620078627510, guid: 28063e05942bd2748b592f8de6b1febb, type: 3}
+  enemySpawnerPrefab: {fileID: 9202334250702815983, guid: 9e1b03ebc1095ed4e8ae2b517b5eadf9,
+    type: 3}

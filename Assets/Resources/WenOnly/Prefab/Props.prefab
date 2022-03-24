@@ -56,6 +56,8 @@ MonoBehaviour:
   - {fileID: 1806682559070806425, guid: 7f043c43f1cc643ff83deb5b865c8a31, type: 3}
   - {fileID: 1806682559070806425, guid: 98438929843d9480c97c014ee88ccaa1, type: 3}
   - {fileID: 8591022547664489031, guid: 10c2065b2324491428fae7f040482600, type: 3}
+  - {fileID: 2981897067426979975, guid: deac2454a28701b4b87bdd9afd29d413, type: 3}
+  - {fileID: 1917583931493021533, guid: 122b17ee489ee4c41bb09296048b7d62, type: 3}
   LowPossibilityTilesForGeneratingList:
   - {fileID: 1806682559070806425, guid: 7f043c43f1cc643ff83deb5b865c8a31, type: 3}
   - {fileID: 1806682559070806425, guid: 98438929843d9480c97c014ee88ccaa1, type: 3}
