@@ -11,7 +11,7 @@ public class Poison : Tile
         {
             Debug.Log("Poison");
             collision.GetComponent<Player>().takeDamage(collision.GetComponent<Tile>(), 2); //player will get hurt while touching the posion
-            Destroy(gameObject); //The poison will disappear after the pick up
+            Destroy(gameObject); //The poison will disappear after colliding with the player
            
         }
     }

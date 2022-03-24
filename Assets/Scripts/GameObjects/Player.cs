@@ -9,6 +9,8 @@ using UnityEngine.SceneManagement;
 //
 public class Player : Tile {
 
+	bool facingRight = true;
+
 	// SFX we play
 	public AudioClip pickupDropSound, hurtSound, exitSound;
 
@@ -34,6 +36,11 @@ public class Player : Tile {
 	public static Player instance {
 		get { return _instance; }
 	}
+
+	//For flip sign
+
+
+
 	void Awake() {
 		_instance = this;
 	}
@@ -216,7 +223,19 @@ public class Player : Tile {
 				GameManager.instance.playerJustWon();
 			}
 		}
+
+		if (other.gameObject.tag == "FlipBox")
+		{
+			Debug.Log("Flip");
+			flip();
+		}
+	}
+
+	void flip()
+	{
+		facingRight = !facingRight;
+		transform.Rotate(0, 180, 0);
 	}
 
 
-}
+	}
