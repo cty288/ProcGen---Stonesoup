@@ -9,7 +9,7 @@ public class SpeedDownZone : Tile
     {
         if (collider.gameObject.tag == "player")
         {
-            Debug.Log("SpeedUp");
+            Debug.Log("SpeedDown");
             GetComponent<Player>().moveSpeed -= 4;
         }
     }
