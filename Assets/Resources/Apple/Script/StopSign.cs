@@ -10,7 +10,7 @@ public class StopSign : Tile
         if (collider.gameObject.tag == "player")
         {
             Debug.Log("Stop");
-            GetComponent<Player>().moveSpeed = 0;
+            collider.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             Destroy(gameObject);
         }
     }
