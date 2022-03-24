@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tags: 4
   tileName: Rat
-  health: 2
+  health: 1
   deathEffect: {fileID: 1267897626114914, guid: a783d8491895847699704a8bc85c5466,
     type: 3}
   deathSFX: {fileID: 0}

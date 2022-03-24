@@ -69,4 +69,5 @@ MonoBehaviour:
   - {fileID: 6289898802457022451, guid: 19831f75ad037a749bd84beb138da8ed, type: 3}
   - {fileID: 2223245335647947676, guid: 4fa5553b781e69741bad6768de579b76, type: 3}
   - {fileID: 5214090620078627510, guid: 28063e05942bd2748b592f8de6b1febb, type: 3}
-  enemySpawnerPrefab: {fileID: 0}
+  enemySpawnerPrefab: {fileID: 9202334250702815983, guid: 9e1b03ebc1095ed4e8ae2b517b5eadf9,
+    type: 3}

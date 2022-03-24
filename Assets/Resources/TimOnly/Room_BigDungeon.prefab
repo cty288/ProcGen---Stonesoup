@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5972766908579195077
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 503650645605839955}
+  - component: {fileID: 3506308567417596864}
+  m_Layer: 0
+  m_Name: Room_BigDungeon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &503650645605839955
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5972766908579195077}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 44.949856, y: 39.269493, z: -27.668802}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3506308567417596864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5972766908579195077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2829744543196b4f9d0dbae08740aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomAuthor: Tim (Dungeon - Big)
+  designedRoomFile: {fileID: 0}
+  localTilePrefabs: []
+  roomGridX: 0
+  roomGridY: 0
+  portalPrefab: {fileID: 5653168957430741782, guid: 3111f8ef65084c9458cd75c70bdce08a,
+    type: 3}
+  buttonPrefab: {fileID: 2910250241211345500, guid: 8828cafbb44fa9840a183ad3cd2db689,
+    type: 3}
+  dungeonRandomness: 6.7
+  dungeonSpawnRandomness: 35
+  maxFill: 70
+  ghostPrefab: {fileID: 8817502390254545684, guid: dff920d8801ac884e89e9a37bf6a136c,
+    type: 3}
+  portalGunPrefab: {fileID: 1709880916603501921, guid: 72b08948c3100784eb521fc56555af23,
+    type: 3}
+  enemySpawnerPrefab: {fileID: 9202334250702815983, guid: 9e1b03ebc1095ed4e8ae2b517b5eadf9,
+    type: 3}
+  currentFilled: 0
+  exitLocations: []
+  ratPrefab: {fileID: 2558128495529429187, guid: d89cae6dafcffa34c8b44a62d62f5b14,
+    type: 3}
+  enemiesPrefabs:
+  - {fileID: 8817502390254545684, guid: dff920d8801ac884e89e9a37bf6a136c, type: 3}
+  - {fileID: 6080006135912310805, guid: 158e6fde54bc5454ab063535d9d4a2b9, type: 3}
+  - {fileID: 1806682559070806425, guid: 1b3bfab2911144afcb1f78d19207269b, type: 3}
+  - {fileID: 1516122876482116, guid: 9f97f8d2e6af040c1bb49a09deacda69, type: 3}
+  enemyPrefabs:
+  - {fileID: 1806682559070806425, guid: 0aa5bb3e1ed1543d3ab2f733c1157749, type: 3}
+  - {fileID: 1097009321995878, guid: 7f119146519d742d7953341b07580643, type: 3}
+  - {fileID: 1861036450554344, guid: 0b78773b9a235406286bf7e2dedde388, type: 3}
+  - {fileID: 1164374350811181727, guid: e73a14e35db084e1aa17b48cd699f79f, type: 3}
+  - {fileID: 6080006135912310805, guid: 158e6fde54bc5454ab063535d9d4a2b9, type: 3}
+  - {fileID: 6034053355541693056, guid: d1b85eee5984f4be2a5d223f110d87b8, type: 3}
+  - {fileID: 1806682559070806425, guid: 1b3bfab2911144afcb1f78d19207269b, type: 3}

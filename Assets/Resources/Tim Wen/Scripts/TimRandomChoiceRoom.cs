@@ -38,12 +38,20 @@ public class TimRandomChoiceRoom : Room
                     roomPrefab = roomChoices[0]; //dungeon
                 }
                 else {
-                    if (Random.Range(0, 100) >= 50) {
-                        roomPrefab = roomChoices[6]; //Wen room
+                    if (roomChoices[6] && designedRooms.Count > 0) {
+                        if (Random.Range(0, 100) >= 50)
+                        {
+                            roomPrefab = roomChoices[6]; //Wen room
+                        }
+                        else
+                        {
+                            roomPrefab = GlobalFuncs.randElem(designedRooms); //Wen room
+                        }
                     }
                     else {
-                        roomPrefab = GlobalFuncs.randElem(designedRooms); //Wen room
+                        roomPrefab = roomChoices[0]; //dungeon
                     }
+                    
                 }
             }
             else {
@@ -56,13 +64,20 @@ public class TimRandomChoiceRoom : Room
                     roomPrefab = roomChoices[5]; //grid
                 }
                 else if(roomChance>=10){
-                    if (Random.Range(0, 100) >= 50)
+                    if (roomChoices[6] && designedRooms.Count > 0)
                     {
-                        roomPrefab = roomChoices[6]; //Wen room
+                        if (Random.Range(0, 100) >= 50)
+                        {
+                            roomPrefab = roomChoices[6]; //Wen room
+                        }
+                        else
+                        {
+                            roomPrefab = GlobalFuncs.randElem(designedRooms); //Wen room
+                        }
                     }
                     else
                     {
-                        roomPrefab = GlobalFuncs.randElem(designedRooms); //Wen room
+                        roomPrefab = roomChoices[0]; //dungeon
                     }
                 }
                 else {
@@ -89,13 +104,20 @@ public class TimRandomChoiceRoom : Room
                     roomPrefab = roomChoices[0];
                 }
             }else if(spawnChance>50 && spawnChance<=90){ //tunnel or all walls
-                if (Random.Range(0, 100) >= 50)
+                if (roomChoices[6] && designedRooms.Count > 0)
                 {
-                    roomPrefab = roomChoices[6]; //Wen room
+                    if (Random.Range(0, 100) >= 50)
+                    {
+                        roomPrefab = roomChoices[6]; //Wen room
+                    }
+                    else
+                    {
+                        roomPrefab = GlobalFuncs.randElem(designedRooms); //Wen room
+                    }
                 }
                 else
                 {
-                    roomPrefab = GlobalFuncs.randElem(designedRooms); //Wen room
+                    roomPrefab = roomChoices[0]; //dungeon
                 }
             }
             else {
